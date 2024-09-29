@@ -17,5 +17,5 @@ namespace Supermarket.Model //Samuel Varela Morales
             Name = name;
         }
 
-    }//Ultima linea
+    }//Ultima linea..
 }
