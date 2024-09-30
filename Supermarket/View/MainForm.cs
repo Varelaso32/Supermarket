@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Supermarket.Business;
-
+using Supermarket.View;
 
 namespace Supermarket
 {
@@ -40,6 +40,14 @@ namespace Supermarket
         private void AboutMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Supermarket V 0.1", "About us");
+        }
+
+        private void PayModeMenuItem_Click(object sender, EventArgs e)
+        {
+            PayModeForm formPayMode = new PayModeForm(ref payModeDAO);
+            formPayMode.MdiParent = this;
+            formPayMode.Show();
+
         }
     }
 }

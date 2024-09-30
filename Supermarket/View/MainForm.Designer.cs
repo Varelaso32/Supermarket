@@ -55,7 +55,7 @@ namespace Supermarket
             this.HelpMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(800, 28);
+            this.MainMenu.Size = new System.Drawing.Size(936, 28);
             this.MainMenu.TabIndex = 1;
             this.MainMenu.Text = "menuStrip1";
             this.MainMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -71,7 +71,7 @@ namespace Supermarket
             // ExitMenuItem
             // 
             this.ExitMenuItem.Name = "ExitMenuItem";
-            this.ExitMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ExitMenuItem.Size = new System.Drawing.Size(120, 26);
             this.ExitMenuItem.Text = "Exit ";
             this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
             // 
@@ -89,19 +89,19 @@ namespace Supermarket
             // ProductsMenuItem
             // 
             this.ProductsMenuItem.Name = "ProductsMenuItem";
-            this.ProductsMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ProductsMenuItem.Size = new System.Drawing.Size(167, 26);
             this.ProductsMenuItem.Text = "Products ";
             // 
             // ProvidersMenuItem
             // 
             this.ProvidersMenuItem.Name = "ProvidersMenuItem";
-            this.ProvidersMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ProvidersMenuItem.Size = new System.Drawing.Size(167, 26);
             this.ProvidersMenuItem.Text = "Providers ";
             // 
             // CategoriesMenuItem
             // 
             this.CategoriesMenuItem.Name = "CategoriesMenuItem";
-            this.CategoriesMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.CategoriesMenuItem.Size = new System.Drawing.Size(167, 26);
             this.CategoriesMenuItem.Text = "Categories ";
             // 
             // PayModeMenuItem
@@ -109,6 +109,7 @@ namespace Supermarket
             this.PayModeMenuItem.Name = "PayModeMenuItem";
             this.PayModeMenuItem.Size = new System.Drawing.Size(224, 26);
             this.PayModeMenuItem.Text = "Pay Mode";
+            this.PayModeMenuItem.Click += new System.EventHandler(this.PayModeMenuItem_Click);
             // 
             // TransactionsMenuItem
             // 
@@ -122,13 +123,13 @@ namespace Supermarket
             // SellMenuItem
             // 
             this.SellMenuItem.Name = "SellMenuItem";
-            this.SellMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.SellMenuItem.Size = new System.Drawing.Size(154, 26);
             this.SellMenuItem.Text = "Sell ";
             // 
             // PurchaseMenuItem
             // 
             this.PurchaseMenuItem.Name = "PurchaseMenuItem";
-            this.PurchaseMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.PurchaseMenuItem.Size = new System.Drawing.Size(154, 26);
             this.PurchaseMenuItem.Text = "Purchase ";
             // 
             // HelpMenuItem
@@ -142,7 +143,7 @@ namespace Supermarket
             // AboutMenuItem
             // 
             this.AboutMenuItem.Name = "AboutMenuItem";
-            this.AboutMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.AboutMenuItem.Size = new System.Drawing.Size(137, 26);
             this.AboutMenuItem.Text = "About ";
             this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
@@ -150,7 +151,7 @@ namespace Supermarket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(936, 504);
             this.Controls.Add(this.MainMenu);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MainMenu;
