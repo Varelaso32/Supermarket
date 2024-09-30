@@ -73,10 +73,10 @@ namespace Supermarket.View
 
         private void ActivateControls(bool editMode)
         {
-            BtnNew.Text = editMode ? "Save" : "New";
+            BtnNew.Text = editMode ? "Guardar" : "Nuevo";
             BtnNew.Image = editMode ? Resources.save : Resources._new;
 
-            BtnEdit.Text = editMode ? "Cancel" : "Edit";
+            BtnEdit.Text = editMode ? "Cancelar" : "Editar";
             BtnEdit.Image = editMode ? Resources.cancel : Resources.edit;
 
             // Activar o desactivar solo el campo Name
@@ -108,13 +108,13 @@ namespace Supermarket.View
 
                 if (payModeDAO.AddPayMode(payMode) == false)
                 {
-                    MessageBox.Show("Error to save", "Alert",
+                    MessageBox.Show("Error al guardar", "Alerta",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     return false;
                 }
 
-                MessageBox.Show("Pay mode save successfully", "Alert",
+                MessageBox.Show("Modo de pago guardado exitosamente", "Alerta",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 LoadPayModeList();
@@ -149,7 +149,7 @@ namespace Supermarket.View
         {
             if ((TxtName.Text).Trim().Length == 0)
             {
-                MessageBox.Show("The Pay mode name is required", "Alert",
+                MessageBox.Show("El nombre del modo de pago es obligatorio", "Alerta",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 TxtName.Focus();
@@ -170,7 +170,7 @@ namespace Supermarket.View
             {
                 if (TxtName.Text.Trim().Length == 0)
                 {
-                    MessageBox.Show("Select one register of the list", "Alert",
+                    MessageBox.Show("Seleccione un registro de la lista", "Alerta",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
                     return;
@@ -185,15 +185,13 @@ namespace Supermarket.View
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            // Verificar si hay un elemento seleccionado en el DataGridView
+
             if (DgPayMode.CurrentRow != null)
             {
-                // Obtener el ID del modo de pago seleccionado
                 int id = Convert.ToInt32(DgPayMode.CurrentRow.Cells[0].Value);
 
-                // Confirmar si el usuario quiere eliminar el registro
-                DialogResult result = MessageBox.Show("Are you sure you want to delete this Pay Mode?",
-                                                      "Delete Confirmation",
+                DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar este Modo de Pago?",
+                                                      "Confirmación de Eliminación",
                                                       MessageBoxButtons.YesNo,
                                                       MessageBoxIcon.Warning);
 
@@ -202,7 +200,7 @@ namespace Supermarket.View
                     // Intentar eliminar el Pay Mode del DAO
                     if (payModeDAO.RemovePayMode(id))
                     {
-                        MessageBox.Show("Pay Mode deleted successfully.", "Info",
+                        MessageBox.Show("Modo de Pago eliminado exitosamente.", "Información",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
                         // Recargar la lista después de la eliminación
@@ -210,7 +208,7 @@ namespace Supermarket.View
                     }
                     else
                     {
-                        MessageBox.Show("Error deleting the Pay Mode.", "Error",
+                        MessageBox.Show("Error al eliminar el Modo de Pago.", "Error",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
                     }
@@ -218,7 +216,7 @@ namespace Supermarket.View
             }
             else
             {
-                MessageBox.Show("Please select a Pay Mode to delete.", "Alert",
+                MessageBox.Show("Por favor seleccione un Modo de Pago para eliminar.", "Alerta",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
             }
