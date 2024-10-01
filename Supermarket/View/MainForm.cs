@@ -44,7 +44,8 @@ namespace Supermarket
 
         private void AboutMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Supermarket V 0.1", "About us");
+            MessageBox.Show("\n\tSamuel Varela Morales " +
+                            "\n\tGrupo: S4AN", "About us");
         }
 
         private void PayModeMenuItem_Click(object sender, EventArgs e)

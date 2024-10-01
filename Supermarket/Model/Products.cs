@@ -23,5 +23,5 @@ namespace Supermarket.Model //Samuel Varela Morales
             CategoryId = categoryId;
         }
 
-    }//Ultima linea..
+    }//Ultima linea...
 }
