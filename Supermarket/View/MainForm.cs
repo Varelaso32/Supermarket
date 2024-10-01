@@ -20,6 +20,11 @@ namespace Supermarket
             payModeDAO = new PayModeDAO();
             InitializeComponent();
             payModeDAO.AddPayMode(new Model.PayMode(null, "Cash"));
+
+            //Agrego fondo para el escritorio principal
+            Bitmap img = new Bitmap(Application.StartupPath + @"\img\fondo2.jpg");
+            this.BackgroundImage = img;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -221,5 +221,17 @@ namespace Supermarket.View
                                 MessageBoxIcon.Exclamation);
             }
         }
+
+        private void TxtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true; 
+                MessageBox.Show("Solo se permiten letras.", "Alerta",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+            }
+        }
     }
 }

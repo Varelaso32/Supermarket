@@ -68,6 +68,8 @@ namespace Supermarket.View
             this.TxtName.Size = new System.Drawing.Size(133, 22);
             this.TxtName.TabIndex = 3;
             this.TxtName.Text = "Pay mode name";
+            this.TxtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtName_KeyPress);
             // 
             // TxtId
             // 
@@ -172,7 +174,7 @@ namespace Supermarket.View
             this.DgPayMode.ReadOnly = true;
             this.DgPayMode.RowHeadersWidth = 51;
             this.DgPayMode.RowTemplate.Height = 24;
-            this.DgPayMode.Size = new System.Drawing.Size(528, 243);
+            this.DgPayMode.Size = new System.Drawing.Size(528, 226);
             this.DgPayMode.TabIndex = 2;
             this.DgPayMode.Click += new System.EventHandler(this.DgPayMode_Click);
             // 
@@ -192,13 +194,13 @@ namespace Supermarket.View
             this.NamePayMode.Name = "NamePayMode";
             this.NamePayMode.ReadOnly = true;
             this.NamePayMode.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.NamePayMode.Width = 300;
+            this.NamePayMode.Width = 200;
             // 
             // PayModeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 510);
+            this.ClientSize = new System.Drawing.Size(903, 529);
             this.ControlBox = false;
             this.Controls.Add(this.DgPayMode);
             this.Controls.Add(this.groupBox2);

@@ -47,7 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\PayModeDAO.cs" />
+    <Compile Include="Model\Categories.cs" />
+    <Compile Include="Model\Customers.cs" />
     <Compile Include="Model\PayMode.cs" />
+    <Compile Include="Model\Products.cs" />
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +100,7 @@
     <Content Include="Resources\cerrar.png" />
     <Content Include="Resources\delete.png" />
     <Content Include="Resources\edit.png" />
+    <Content Include="Resources\fondo1.jpg" />
     <Content Include="Resources\new.png" />
     <Content Include="Resources\products.png" />
     <Content Include="Resources\providers.png" />
