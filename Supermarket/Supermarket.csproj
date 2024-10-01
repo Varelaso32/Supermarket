@@ -46,12 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\CategoriesDAO.cs" />
     <Compile Include="Business\CustomersDAO.cs" />
     <Compile Include="Business\PayModeDAO.cs" />
+    <Compile Include="Business\ProductsDAO.cs" />
     <Compile Include="Model\Categories.cs" />
     <Compile Include="Model\Customers.cs" />
     <Compile Include="Model\PayMode.cs" />
     <Compile Include="Model\Products.cs" />
+    <Compile Include="View\CategoriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CategoriesForm.Designer.cs">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CustomersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +79,12 @@
     </Compile>
     <Compile Include="View\PayModeForm.Designer.cs">
       <DependentUpon>PayModeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProductsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProductsForm.Designer.cs">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>
