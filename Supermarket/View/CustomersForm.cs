@@ -26,7 +26,8 @@ namespace Supermarket.View
             LoadCustomerList();
             EditMode = false;
             IsNew = false;
-        }
+
+        }//Final de clase
 
         private void LoadCustomerList()
         {
@@ -43,7 +44,8 @@ namespace Supermarket.View
                                      customerKV.Value.Birthday 
                                      );
             }
-        }
+
+        }//Final de clase
 
         private void DgCustomers_Click(object sender, EventArgs e)
         {
@@ -55,12 +57,14 @@ namespace Supermarket.View
             TxtCumple.Text = DgCustomers.CurrentRow.Cells[5].Value.ToString();
             TxtEmail.Text = DgCustomers.CurrentRow.Cells[6].Value.ToString();
             TxtPassword.Text = DgCustomers.CurrentRow.Cells[7].Value.ToString();
-        }
+
+        }//Final de clase
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+
+        }//Final de clase
 
         private void BtnNew_Click(object sender, EventArgs e)
         {
@@ -80,7 +84,8 @@ namespace Supermarket.View
             }
             ClearFields();
             ActivateControls(EditMode);
-        }
+
+        }//Final de clase
 
         private void ActivateControls(bool editMode)
         {
@@ -106,7 +111,8 @@ namespace Supermarket.View
             {
                 TxtFirstName.Focus();
             }
-        }
+
+        }//Final de clase
 
         private bool SaveCustomer()
         {
@@ -153,7 +159,8 @@ namespace Supermarket.View
                 return false;
             }
             return true;
-        }
+
+        }//Final de clase
 
         private bool AreFieldsFilled()
         {
@@ -167,7 +174,8 @@ namespace Supermarket.View
                 return false;
             }
             return true;
-        }
+
+        }//Final de clase
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
@@ -180,16 +188,27 @@ namespace Supermarket.View
                 if (string.IsNullOrWhiteSpace(TxtFirstName.Text))
                 {
                     MessageBox.Show("Seleccione un cliente de la lista", "Alerta",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Exclamation);
                     return;
                 }
+
+                DialogResult result = MessageBox.Show("¿Está seguro que desea editar este cliente?",
+                                                      "Confirmación de Edición",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
+
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+
                 EditMode = true;
                 IsNew = false;
             }
             ActivateControls(EditMode);
 
-        }
+        }//Final de clase
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -225,7 +244,8 @@ namespace Supermarket.View
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
             }
-        }
+
+        }//Final de clase
 
         private void ClearFields()
         {
@@ -237,7 +257,8 @@ namespace Supermarket.View
             TxtCumple.Text = ""; 
             TxtEmail.Text = "";
             TxtPassword.Text = "";
-        }
+
+        }//Final de clase
 
         private void TxtCelular_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -248,7 +269,8 @@ namespace Supermarket.View
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
             }
-        }
+
+        }//Final de clase
 
         private void TxtFirstName_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -259,7 +281,8 @@ namespace Supermarket.View
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
             }
-        }
+
+        }//Final de clase
 
         private void TxtLastName_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -270,7 +293,8 @@ namespace Supermarket.View
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
             }
-        }
+
+        }//Final de clase
 
         private void TxtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -281,6 +305,8 @@ namespace Supermarket.View
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
             }
-        }
-    }
+
+        }//Final de clase
+
+    }//Ultima linea
 }

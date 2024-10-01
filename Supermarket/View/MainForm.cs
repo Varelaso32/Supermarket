@@ -23,27 +23,26 @@ namespace Supermarket
 
             InitializeComponent();
 
-
-            // Agregar un PayMode predefinido
             payModeDAO.AddPayMode(new Model.PayMode(null, "Cash"));
 
-            // Agregar un cliente predefinido "quemado"
             customerDAO.AddCustomer(new Model.Customer(
                 null,                  
                 "12345678",             
                 "Samuel",                
-                "Varela",               
+                "Varela",
+                "sam.varela@mail.com",
+               "123456OP",
                 "31527516",
-               "05-09-2002", 
-                "sam.varela@mail.com",   
-                "123456OP"            
+                "05-09-2002 "
             ));
 
-            //Agrego fondo para el escritorio principal
+            //Agrego fondo para el escritorio principal en la raiz, en el bin
+
             Bitmap img = new Bitmap(Application.StartupPath + @"\img\fondo2.jpg");
             this.BackgroundImage = img;
             this.BackgroundImageLayout = ImageLayout.Stretch;
-        }
+
+        }//Final de clase
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -58,13 +57,15 @@ namespace Supermarket
         private void ExitMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+
+        }//Final de clase
 
         private void AboutMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("\n\tSamuel Varela Morales " +
                             "\n\tGrupo: S4AN", "About us");
-        }
+
+        }//Final de clase
 
         private void PayModeMenuItem_Click(object sender, EventArgs e)
         {
@@ -72,13 +73,14 @@ namespace Supermarket
             formPayMode.MdiParent = this;
             formPayMode.Show();
 
-        }
+        }//Final de clase
 
         private void ProvidersMenuItem_Click(object sender, EventArgs e)
         {
             CustomersForm formCustomers = new CustomersForm(ref customerDAO);
             formCustomers.MdiParent = this;
             formCustomers.Show();
-        }
+
+        }//Final de clase
     }
 }

@@ -16,7 +16,8 @@ namespace Supermarket.Business
         {
             CustomerList = new Dictionary<int, Customer>();
             customerSecuencial = 0;
-        }
+
+        }//Final de clase
 
         public bool AddCustomer(Customer customer)
         {
@@ -30,7 +31,8 @@ namespace Supermarket.Business
                 return false;
             }
             return true;
-        }
+
+        }//Final de clase
 
         public bool RemoveCustomer(int id)
         {
@@ -41,7 +43,8 @@ namespace Supermarket.Business
                 return true;
             }
             return false;
-        }
+
+        }//Final de clase
 
         public Customer GetCustomer(int id)
         {
@@ -51,7 +54,8 @@ namespace Supermarket.Business
                 return CustomerList[id];
             }
             return null;
-        }
+
+        }//Final de clase
 
         public bool UpdateCustomer(int id, Customer customer)
         {
@@ -69,11 +73,13 @@ namespace Supermarket.Business
                 }
             }
             return false;
-        }
+
+        }//Final de clase
 
         public Dictionary<int, Customer> GetCustomerList()
         {
             return CustomerList;
-        }
+
+        }//Final de clase
     }
 }
