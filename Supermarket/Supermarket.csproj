@@ -46,11 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\CustomersDAO.cs" />
     <Compile Include="Business\PayModeDAO.cs" />
     <Compile Include="Model\Categories.cs" />
     <Compile Include="Model\Customers.cs" />
     <Compile Include="Model\PayMode.cs" />
     <Compile Include="Model\Products.cs" />
+    <Compile Include="View\CustomersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CustomersForm.Designer.cs">
+      <DependentUpon>CustomersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +72,9 @@
     <Compile Include="View\PayModeForm.Designer.cs">
       <DependentUpon>PayModeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CustomersForm.resx">
+      <DependentUpon>CustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,9 +108,11 @@
     <Content Include="Resources\buy.png" />
     <Content Include="Resources\cancel.png" />
     <Content Include="Resources\cerrar.png" />
+    <None Include="Resources\customers.png" />
     <Content Include="Resources\delete.png" />
     <Content Include="Resources\edit.png" />
     <None Include="Resources\icon_information.png" />
+    <None Include="Resources\exit.png" />
     <Content Include="Resources\new.png" />
     <Content Include="Resources\products.png" />
     <Content Include="Resources\providers.png" />

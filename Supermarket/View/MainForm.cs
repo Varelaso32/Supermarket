@@ -15,11 +15,29 @@ namespace Supermarket
     public partial class MainForm : Form
     {
         internal PayModeDAO payModeDAO;
+        internal CustomerDAO customerDAO;
         public MainForm()
         {
             payModeDAO = new PayModeDAO();
+            customerDAO = new CustomerDAO();
+
             InitializeComponent();
+
+
+            // Agregar un PayMode predefinido
             payModeDAO.AddPayMode(new Model.PayMode(null, "Cash"));
+
+            // Agregar un cliente predefinido "quemado"
+            customerDAO.AddCustomer(new Model.Customer(
+                null,                  
+                "12345678",             
+                "Samuel",                
+                "Varela",               
+                "31527516",
+               "05-09-2002", 
+                "sam.varela@mail.com",   
+                "123456OP"            
+            ));
 
             //Agrego fondo para el escritorio principal
             Bitmap img = new Bitmap(Application.StartupPath + @"\img\fondo2.jpg");
@@ -54,6 +72,13 @@ namespace Supermarket
             formPayMode.MdiParent = this;
             formPayMode.Show();
 
+        }
+
+        private void ProvidersMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomersForm formCustomers = new CustomersForm(ref customerDAO);
+            formCustomers.MdiParent = this;
+            formCustomers.Show();
         }
     }
 }

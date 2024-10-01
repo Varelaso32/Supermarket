@@ -12,7 +12,6 @@ namespace Supermarket.View
         private readonly PayModeDAO payModeDAO;
         private bool EditMode;
         private bool IsNew;
-        private bool state;
 
         internal PayModeForm(ref PayModeDAO payModeDAO)
         {
@@ -79,15 +78,12 @@ namespace Supermarket.View
             BtnEdit.Text = editMode ? "Cancelar" : "Editar";
             BtnEdit.Image = editMode ? Resources.cancel : Resources.edit;
 
-            // Activar o desactivar solo el campo Name
             TxtName.Enabled = editMode;
 
-            // Deshabilitar el DataGridView y otros botones cuando se está editando
             DgPayMode.Enabled = !editMode;
             BtnDelete.Enabled = !editMode;
             BtnClose.Enabled = !editMode;
 
-            // Establecer el foco en TxtName cuando está habilitado
             if (editMode)
             {
                 TxtName.Focus();

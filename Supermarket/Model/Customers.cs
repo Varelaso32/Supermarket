@@ -13,11 +13,11 @@ namespace Supermarket.Model //Samuel Varela Morales
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
-        public DateTime Birthday { get; set; }
+        public string Birthday { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
 
-        public Customer(int? id, string documentNumber, string firstName, string lastName, string address, DateTime birthday, string phoneNumber, string email)
+        public Customer(int? id, string documentNumber, string firstName, string lastName, string address, string birthday, string phoneNumber, string email)
         {
             Id = id;
             DocumentNumber = documentNumber;
