@@ -34,13 +34,13 @@ namespace Supermarket
             this.ExitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MasterMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProductsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProvidersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CategoriesMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PayModeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TransactionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SellMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PurchaseMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProvidersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PayModeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +72,7 @@ namespace Supermarket
             // 
             this.ExitMenuItem.Image = global::Supermarket.Properties.Resources.exit;
             this.ExitMenuItem.Name = "ExitMenuItem";
-            this.ExitMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ExitMenuItem.Size = new System.Drawing.Size(120, 26);
             this.ExitMenuItem.Text = "Exit ";
             this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
             // 
@@ -89,15 +89,33 @@ namespace Supermarket
             // 
             // ProductsMenuItem
             // 
+            this.ProductsMenuItem.Image = global::Supermarket.Properties.Resources.products;
             this.ProductsMenuItem.Name = "ProductsMenuItem";
             this.ProductsMenuItem.Size = new System.Drawing.Size(224, 26);
             this.ProductsMenuItem.Text = "Products ";
+            this.ProductsMenuItem.Click += new System.EventHandler(this.ProductsMenuItem_Click);
+            // 
+            // ProvidersMenuItem
+            // 
+            this.ProvidersMenuItem.Image = global::Supermarket.Properties.Resources.customers;
+            this.ProvidersMenuItem.Name = "ProvidersMenuItem";
+            this.ProvidersMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ProvidersMenuItem.Text = "Customers";
+            this.ProvidersMenuItem.Click += new System.EventHandler(this.ProvidersMenuItem_Click);
             // 
             // CategoriesMenuItem
             // 
             this.CategoriesMenuItem.Name = "CategoriesMenuItem";
             this.CategoriesMenuItem.Size = new System.Drawing.Size(224, 26);
             this.CategoriesMenuItem.Text = "Categories ";
+            // 
+            // PayModeMenuItem
+            // 
+            this.PayModeMenuItem.Image = global::Supermarket.Properties.Resources.buy;
+            this.PayModeMenuItem.Name = "PayModeMenuItem";
+            this.PayModeMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.PayModeMenuItem.Text = "Pay Mode";
+            this.PayModeMenuItem.Click += new System.EventHandler(this.PayModeMenuItem_Click);
             // 
             // TransactionsMenuItem
             // 
@@ -111,13 +129,13 @@ namespace Supermarket
             // SellMenuItem
             // 
             this.SellMenuItem.Name = "SellMenuItem";
-            this.SellMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.SellMenuItem.Size = new System.Drawing.Size(154, 26);
             this.SellMenuItem.Text = "Sell ";
             // 
             // PurchaseMenuItem
             // 
             this.PurchaseMenuItem.Name = "PurchaseMenuItem";
-            this.PurchaseMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.PurchaseMenuItem.Size = new System.Drawing.Size(154, 26);
             this.PurchaseMenuItem.Text = "Purchase ";
             // 
             // HelpMenuItem
@@ -128,27 +146,11 @@ namespace Supermarket
             this.HelpMenuItem.Size = new System.Drawing.Size(55, 24);
             this.HelpMenuItem.Text = "Help";
             // 
-            // ProvidersMenuItem
-            // 
-            this.ProvidersMenuItem.Image = global::Supermarket.Properties.Resources.customers;
-            this.ProvidersMenuItem.Name = "ProvidersMenuItem";
-            this.ProvidersMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.ProvidersMenuItem.Text = "Customers";
-            this.ProvidersMenuItem.Click += new System.EventHandler(this.ProvidersMenuItem_Click);
-            // 
-            // PayModeMenuItem
-            // 
-            this.PayModeMenuItem.Image = global::Supermarket.Properties.Resources.buy;
-            this.PayModeMenuItem.Name = "PayModeMenuItem";
-            this.PayModeMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.PayModeMenuItem.Text = "Pay Mode";
-            this.PayModeMenuItem.Click += new System.EventHandler(this.PayModeMenuItem_Click);
-            // 
             // AboutMenuItem
             // 
             this.AboutMenuItem.Image = global::Supermarket.Properties.Resources.icon_information;
             this.AboutMenuItem.Name = "AboutMenuItem";
-            this.AboutMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.AboutMenuItem.Size = new System.Drawing.Size(137, 26);
             this.AboutMenuItem.Text = "About ";
             this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
@@ -161,7 +163,7 @@ namespace Supermarket
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MainMenu;
             this.Name = "MainForm";
-            this.Text = "Supermarket";
+            this.Text = "Main Form";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainMenu.ResumeLayout(false);

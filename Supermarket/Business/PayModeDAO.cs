@@ -5,13 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Supermarket.Model;
 
-namespace Supermarket.Business
+namespace Supermarket.Business //Samuel Varela Morales
 {
     internal class PayModeDAO
     {
 
         private readonly Dictionary<int, PayMode> PayModeList;
-
         private static int payModeSecuencial;
 
         public PayModeDAO()

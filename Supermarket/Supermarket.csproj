@@ -105,6 +105,9 @@
     <EmbeddedResource Include="View\PayModeForm.resx">
       <DependentUpon>PayModeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ProductsForm.resx">
+      <DependentUpon>ProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

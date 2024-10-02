@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Supermarket.Business
+namespace Supermarket.Business //Samuel Varela Morales
 {
     class CategoriesDAO
     {

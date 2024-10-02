@@ -11,7 +11,7 @@ using Supermarket.Business;
 using Supermarket.Model;
 using Supermarket.Properties;
 
-namespace Supermarket.View
+namespace Supermarket.View //Samuel Varela Morales
 {
     public partial class CustomersForm : Form
     {

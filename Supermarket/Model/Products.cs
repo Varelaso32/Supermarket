@@ -10,11 +10,11 @@ namespace Supermarket.Model //Samuel Varela Morales
     {
         public int? Id { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }
+        public int Price { get; set; }  
         public int Stock { get; set; }
         public int CategoryId { get; set; }
 
-        public Product(int? id, string name, decimal price, int stock, int categoryId)
+        public Product(int? id, string name, int price, int stock, int categoryId)  
         {
             Id = id;
             Name = name;
@@ -23,5 +23,5 @@ namespace Supermarket.Model //Samuel Varela Morales
             CategoryId = categoryId;
         }
 
-    }//Ultima linea...
+    }//Ultima Linea...
 }

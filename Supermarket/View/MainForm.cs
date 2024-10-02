@@ -16,25 +16,24 @@ namespace Supermarket
     {
         internal PayModeDAO payModeDAO;
         internal CustomerDAO customerDAO;
+        internal ProductDAO productDAO;
+
         public MainForm()
         {
             payModeDAO = new PayModeDAO();
             customerDAO = new CustomerDAO();
+            productDAO = new ProductDAO();
 
             InitializeComponent();
 
-            payModeDAO.AddPayMode(new Model.PayMode(null, "Cash"));
+            payModeDAO.AddPayMode(
+                new Model.PayMode(null, "Cash"));
 
-            customerDAO.AddCustomer(new Model.Customer(
-                null,                   
-                "Samuel",             
-                "Varela",     
-                "12345678",        
-                "31527516",          
-                "05-09-2002",         
-                "sam.varela@mail.com", 
-                "123456OP"          
-            ));
+            customerDAO.AddCustomer
+                (new Model.Customer(null, "Samuel", "Varela",  "12345678", "31527516", "05-09-2002", "sam.varela@mail.com", "123456OP"));
+
+            productDAO.AddProduct
+                (new Model.Product(null, "Peineta", 2500, 50, 1));  
 
             //Agrego fondo para el escritorio principal en la raiz, en el bin
 
@@ -82,5 +81,12 @@ namespace Supermarket
             formCustomers.Show();
 
         }//Final de clase
+
+        private void ProductsMenuItem_Click(object sender, EventArgs e)
+        {
+            ProductsForm formProducts = new ProductsForm(ref productDAO);
+            formProducts.MdiParent = this;
+            formProducts.Show();
+        }
     }
 }
