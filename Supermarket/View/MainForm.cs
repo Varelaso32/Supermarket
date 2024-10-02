@@ -26,14 +26,14 @@ namespace Supermarket
             payModeDAO.AddPayMode(new Model.PayMode(null, "Cash"));
 
             customerDAO.AddCustomer(new Model.Customer(
-                null,                  
-                "12345678",             
-                "Samuel",                
-                "Varela",
-                "sam.varela@mail.com",
-               "123456OP",
-                "31527516",
-                "05-09-2002 "
+                null,                   
+                "Samuel",             
+                "Varela",     
+                "12345678",        
+                "31527516",          
+                "05-09-2002",         
+                "sam.varela@mail.com", 
+                "123456OP"          
             ));
 
             //Agrego fondo para el escritorio principal en la raiz, en el bin

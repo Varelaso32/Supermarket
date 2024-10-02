@@ -12,22 +12,24 @@ namespace Supermarket.Model //Samuel Varela Morales
         public string DocumentNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Address { get; set; }
-        public string Birthday { get; set; }
         public string PhoneNumber { get; set; }
+        public string Birthday { get; set; }
         public string Email { get; set; }
+        public string Address { get; set; }
 
-        public Customer(int? id, string documentNumber, string firstName, string lastName, string address, string birthday, string phoneNumber, string email)
+        public Customer(int? id, string firstName, string lastName, string documentNumber,
+                string phoneNumber, string birthday, string email, string address)
         {
             Id = id;
-            DocumentNumber = documentNumber;
             FirstName = firstName;
             LastName = lastName;
-            Address = address;
-            Birthday = birthday;
+            DocumentNumber = documentNumber;
             PhoneNumber = phoneNumber;
+            Birthday = birthday;
             Email = email;
+            Address = address;
         }
+
 
     }//Ultima linea..
 }

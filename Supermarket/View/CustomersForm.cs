@@ -32,31 +32,45 @@ namespace Supermarket.View
         private void LoadCustomerList()
         {
             DgCustomers.Rows.Clear();
-            foreach (KeyValuePair<int, Customer> customerKV in this.customerDAO.GetCustomerList())
+            var customers = this.customerDAO.GetCustomerList();
+
+            if (customers.Count > 0)
             {
-                DgCustomers.Rows.Add(customerKV.Value.Id, 
-                                     customerKV.Value.FirstName,
-                                     customerKV.Value.LastName, 
-                                     customerKV.Value.DocumentNumber,
-                                     customerKV.Value.PhoneNumber,
-                                     customerKV.Value.Email,
-                                     customerKV.Value.Address,
-                                     customerKV.Value.Birthday 
-                                     );
+                foreach (KeyValuePair<int, Customer> customerKV in customers)
+                {
+                    DgCustomers.Rows.Add(
+                        customerKV.Value.Id,
+                        customerKV.Value.FirstName,
+                        customerKV.Value.LastName,
+                        customerKV.Value.DocumentNumber,
+                        customerKV.Value.PhoneNumber,
+                        customerKV.Value.Birthday,
+                        customerKV.Value.Email,
+                        customerKV.Value.Address
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show("No hay clientes disponibles.", "Información",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }//Final de clase
 
         private void DgCustomers_Click(object sender, EventArgs e)
         {
-            TxtId.Text = DgCustomers.CurrentRow.Cells[0].Value.ToString();
-            TxtFirstName.Text = DgCustomers.CurrentRow.Cells[1].Value.ToString();
-            TxtLastName.Text = DgCustomers.CurrentRow.Cells[2].Value.ToString();
-            TxtDocumento.Text = DgCustomers.CurrentRow.Cells[3].Value.ToString();
-            TxtCelular.Text = DgCustomers.CurrentRow.Cells[4].Value.ToString();
-            TxtCumple.Text = DgCustomers.CurrentRow.Cells[5].Value.ToString();
-            TxtEmail.Text = DgCustomers.CurrentRow.Cells[6].Value.ToString();
-            TxtPassword.Text = DgCustomers.CurrentRow.Cells[7].Value.ToString();
+            if (DgCustomers.CurrentRow != null)
+            {
+                TxtId.Text = DgCustomers.CurrentRow.Cells[0].Value.ToString();     
+                TxtFirstName.Text = DgCustomers.CurrentRow.Cells[1].Value.ToString(); 
+                TxtLastName.Text = DgCustomers.CurrentRow.Cells[2].Value.ToString();  
+                TxtDocumento.Text = DgCustomers.CurrentRow.Cells[3].Value.ToString(); 
+                TxtCelular.Text = DgCustomers.CurrentRow.Cells[4].Value.ToString();   
+                TxtCumple.Text = DgCustomers.CurrentRow.Cells[5].Value.ToString();    
+                TxtEmail.Text = DgCustomers.CurrentRow.Cells[6].Value.ToString();    
+                TxtPassword.Text = DgCustomers.CurrentRow.Cells[7].Value.ToString(); 
+            }
 
         }//Final de clase
 
@@ -68,21 +82,20 @@ namespace Supermarket.View
 
         private void BtnNew_Click(object sender, EventArgs e)
         {
-            if (EditMode == false)
+            if (!EditMode)
             {
                 EditMode = true;
                 IsNew = true;
+                ClearFields();
             }
             else
             {
-                if (SaveCustomer() == false)
+                if (SaveCustomer())
                 {
-                    return;
-                };
-                IsNew = false;
-                EditMode = false;
+                    IsNew = false;
+                    EditMode = false;
+                }
             }
-            ClearFields();
             ActivateControls(EditMode);
 
         }//Final de clase
@@ -121,43 +134,55 @@ namespace Supermarket.View
                 return false;
             }
 
-            if (IsNew == true)
+            try
             {
-                Customer customer = new Customer(null, TxtDocumento.Text, TxtFirstName.Text, TxtLastName.Text,
-                                                 TxtCelular.Text, TxtCumple.Text, TxtEmail.Text, TxtPassword.Text);
-
-                if (customerDAO.AddCustomer(customer) == false)
+                if (IsNew)
                 {
-                    MessageBox.Show("Error al guardar", "Alerta",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
+                    Customer customer = new Customer(null, TxtDocumento.Text, TxtFirstName.Text, TxtLastName.Text,
+                                                     TxtCelular.Text, TxtCumple.Text, TxtEmail.Text, TxtPassword.Text);
+
+                    if (!customerDAO.AddCustomer(customer))
+                    {
+                        MessageBox.Show("Error al guardar el cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+
+                    MessageBox.Show("Cliente guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadCustomerList();
+                }
+                else
+                {
+                    int id = Int32.Parse(TxtId.Text);
+                    Customer customer = customerDAO.GetCustomer(id);
+
+                    if (customer != null)
+                    {
+                        customer.FirstName = TxtFirstName.Text;
+                        customer.LastName = TxtLastName.Text;
+                        customer.DocumentNumber = TxtDocumento.Text;
+                        customer.PhoneNumber = TxtCelular.Text;
+                        customer.Birthday = TxtCumple.Text;
+                        customer.Email = TxtEmail.Text;
+                        customer.Address = TxtPassword.Text;
+
+                        if (!customerDAO.UpdateCustomer(id, customer))
+                        {
+                            MessageBox.Show("Error al actualizar el cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+
+                        LoadCustomerList();
+                        return true;
+                    }
                     return false;
                 }
-
-                MessageBox.Show("Cliente guardado exitosamente", "Alerta",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                LoadCustomerList();
             }
-            else
+            catch (Exception ex)
             {
-                int id = Int32.Parse(TxtId.Text);
-                Customer customer = customerDAO.GetCustomer(id);
-
-                if (customer != null)
-                {
-                    customer.DocumentNumber = TxtDocumento.Text;
-                    customer.FirstName = TxtFirstName.Text;
-                    customer.LastName = TxtLastName.Text;
-                    customer.PhoneNumber = TxtCelular.Text;
-                    customer.Birthday = TxtCumple.Text;
-                    customer.Email = TxtEmail.Text;
-                    customerDAO.UpdateCustomer(id, customer);
-                    LoadCustomerList();
-                    return true;
-                }
+                MessageBox.Show($"Se ha producido un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+
             return true;
 
         }//Final de clase
@@ -257,6 +282,7 @@ namespace Supermarket.View
             TxtCumple.Text = ""; 
             TxtEmail.Text = "";
             TxtPassword.Text = "";
+            TxtCumple.Text = "";
 
         }//Final de clase
 
@@ -308,5 +334,9 @@ namespace Supermarket.View
 
         }//Final de clase
 
+        private void DgCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }//Ultima linea
 }

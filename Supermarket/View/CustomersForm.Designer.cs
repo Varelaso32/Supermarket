@@ -30,27 +30,27 @@ namespace Supermarket.View
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TxtFirstName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtLastName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TxtId = new System.Windows.Forms.TextBox();
-            this.TxtCelular = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtDocumento = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TxtPassword = new System.Windows.Forms.TextBox();
             this.TxtEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtCumple = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.TxtPassword = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.TxtCelular = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtDocumento = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TxtId = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtLastName = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TxtFirstName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BtnClose = new System.Windows.Forms.Button();
+            this.BtnNew = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnEdit = new System.Windows.Forms.Button();
-            this.BtnNew = new System.Windows.Forms.Button();
             this.DgCustomers = new System.Windows.Forms.DataGridView();
             this.IdCustomers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FirstNameCustomers = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,60 +90,59 @@ namespace Supermarket.View
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingresar Datos";
             // 
-            // label1
+            // label8
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(132, 223);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 17);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Direccion";
             // 
-            // TxtFirstName
+            // TxtPassword
             // 
-            this.TxtFirstName.Enabled = false;
-            this.TxtFirstName.Location = new System.Drawing.Point(19, 58);
-            this.TxtFirstName.Name = "TxtFirstName";
-            this.TxtFirstName.Size = new System.Drawing.Size(176, 22);
-            this.TxtFirstName.TabIndex = 1;
-            this.TxtFirstName.Text = "Ingrese su nombre";
-            this.TxtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtFirstName_KeyPress);
+            this.TxtPassword.Enabled = false;
+            this.TxtPassword.Location = new System.Drawing.Point(135, 243);
+            this.TxtPassword.Name = "TxtPassword";
+            this.TxtPassword.Size = new System.Drawing.Size(176, 22);
+            this.TxtPassword.TabIndex = 14;
+            this.TxtPassword.Text = "Ingrese su direccion";
             // 
-            // label2
+            // TxtEmail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(223, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Apellido";
+            this.TxtEmail.Enabled = false;
+            this.TxtEmail.Location = new System.Drawing.Point(226, 179);
+            this.TxtEmail.Name = "TxtEmail";
+            this.TxtEmail.Size = new System.Drawing.Size(176, 22);
+            this.TxtEmail.TabIndex = 13;
+            this.TxtEmail.Text = "Ingrese su email";
             // 
-            // TxtLastName
+            // label6
             // 
-            this.TxtLastName.Enabled = false;
-            this.TxtLastName.Location = new System.Drawing.Point(226, 58);
-            this.TxtLastName.Name = "TxtLastName";
-            this.TxtLastName.Size = new System.Drawing.Size(176, 22);
-            this.TxtLastName.TabIndex = 3;
-            this.TxtLastName.Text = "Ingrese su apellido";
-            this.TxtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtLastName_KeyPress);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(223, 159);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Email";
             // 
-            // label3
+            // TxtCumple
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(408, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "ID";
+            this.TxtCumple.Enabled = false;
+            this.TxtCumple.Location = new System.Drawing.Point(19, 179);
+            this.TxtCumple.Name = "TxtCumple";
+            this.TxtCumple.Size = new System.Drawing.Size(176, 22);
+            this.TxtCumple.TabIndex = 11;
+            this.TxtCumple.Text = "DD-MM-YYYY";
             // 
-            // TxtId
+            // label7
             // 
-            this.TxtId.Enabled = false;
-            this.TxtId.Location = new System.Drawing.Point(435, 21);
-            this.TxtId.Name = "TxtId";
-            this.TxtId.Size = new System.Drawing.Size(90, 22);
-            this.TxtId.TabIndex = 5;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 159);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 17);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Cumpleaños";
             // 
             // TxtCelular
             // 
@@ -183,59 +182,60 @@ namespace Supermarket.View
             this.label5.TabIndex = 6;
             this.label5.Text = "Documento";
             // 
-            // TxtEmail
+            // TxtId
             // 
-            this.TxtEmail.Enabled = false;
-            this.TxtEmail.Location = new System.Drawing.Point(226, 179);
-            this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(176, 22);
-            this.TxtEmail.TabIndex = 13;
-            this.TxtEmail.Text = "Ingrese su email";
+            this.TxtId.Enabled = false;
+            this.TxtId.Location = new System.Drawing.Point(435, 21);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.Size = new System.Drawing.Size(90, 22);
+            this.TxtId.TabIndex = 5;
             // 
-            // label6
+            // label3
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(223, 159);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 17);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Email";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(408, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "ID";
             // 
-            // TxtCumple
+            // TxtLastName
             // 
-            this.TxtCumple.Enabled = false;
-            this.TxtCumple.Location = new System.Drawing.Point(19, 179);
-            this.TxtCumple.Name = "TxtCumple";
-            this.TxtCumple.Size = new System.Drawing.Size(176, 22);
-            this.TxtCumple.TabIndex = 11;
-            this.TxtCumple.Text = "DD-MM-YYYY";
+            this.TxtLastName.Enabled = false;
+            this.TxtLastName.Location = new System.Drawing.Point(226, 58);
+            this.TxtLastName.Name = "TxtLastName";
+            this.TxtLastName.Size = new System.Drawing.Size(176, 22);
+            this.TxtLastName.TabIndex = 3;
+            this.TxtLastName.Text = "Ingrese su apellido";
+            this.TxtLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtLastName_KeyPress);
             // 
-            // label7
+            // label2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 159);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 17);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Cumpleaños";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(223, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Apellido";
             // 
-            // TxtPassword
+            // TxtFirstName
             // 
-            this.TxtPassword.Enabled = false;
-            this.TxtPassword.Location = new System.Drawing.Point(135, 243);
-            this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(176, 22);
-            this.TxtPassword.TabIndex = 14;
-            this.TxtPassword.Text = "Ingrese una contraseña";
+            this.TxtFirstName.Enabled = false;
+            this.TxtFirstName.Location = new System.Drawing.Point(19, 58);
+            this.TxtFirstName.Name = "TxtFirstName";
+            this.TxtFirstName.Size = new System.Drawing.Size(176, 22);
+            this.TxtFirstName.TabIndex = 1;
+            this.TxtFirstName.Text = "Ingrese su nombre";
+            this.TxtFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtFirstName_KeyPress);
             // 
-            // label8
+            // label1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(132, 223);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 17);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Contraseña";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre";
             // 
             // groupBox2
             // 
@@ -262,6 +262,19 @@ namespace Supermarket.View
             this.BtnClose.UseVisualStyleBackColor = true;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
+            // BtnNew
+            // 
+            this.BtnNew.Image = global::Supermarket.Properties.Resources._new;
+            this.BtnNew.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnNew.Location = new System.Drawing.Point(19, 49);
+            this.BtnNew.Name = "BtnNew";
+            this.BtnNew.Size = new System.Drawing.Size(100, 67);
+            this.BtnNew.TabIndex = 4;
+            this.BtnNew.Text = "&New";
+            this.BtnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BtnNew.UseVisualStyleBackColor = true;
+            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
+            // 
             // BtnDelete
             // 
             this.BtnDelete.Image = global::Supermarket.Properties.Resources.delete;
@@ -287,19 +300,6 @@ namespace Supermarket.View
             this.BtnEdit.UseVisualStyleBackColor = true;
             this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
-            // BtnNew
-            // 
-            this.BtnNew.Image = global::Supermarket.Properties.Resources._new;
-            this.BtnNew.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnNew.Location = new System.Drawing.Point(19, 49);
-            this.BtnNew.Name = "BtnNew";
-            this.BtnNew.Size = new System.Drawing.Size(100, 67);
-            this.BtnNew.TabIndex = 4;
-            this.BtnNew.Text = "&New";
-            this.BtnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnNew.UseVisualStyleBackColor = true;
-            this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
-            // 
             // DgCustomers
             // 
             this.DgCustomers.AllowUserToAddRows = false;
@@ -321,6 +321,7 @@ namespace Supermarket.View
             this.DgCustomers.RowTemplate.Height = 24;
             this.DgCustomers.Size = new System.Drawing.Size(831, 231);
             this.DgCustomers.TabIndex = 2;
+            this.DgCustomers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgCustomers_CellContentClick);
             this.DgCustomers.Click += new System.EventHandler(this.DgCustomers_Click);
             // 
             // IdCustomers
@@ -339,6 +340,7 @@ namespace Supermarket.View
             this.FirstNameCustomers.Name = "FirstNameCustomers";
             this.FirstNameCustomers.ReadOnly = true;
             this.FirstNameCustomers.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FirstNameCustomers.Width = 125;
             // 
             // LastNameCustomers
             // 
@@ -347,6 +349,7 @@ namespace Supermarket.View
             this.LastNameCustomers.Name = "LastNameCustomers";
             this.LastNameCustomers.ReadOnly = true;
             this.LastNameCustomers.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.LastNameCustomers.Width = 125;
             // 
             // DocumentoCustomers
             // 
@@ -355,6 +358,7 @@ namespace Supermarket.View
             this.DocumentoCustomers.Name = "DocumentoCustomers";
             this.DocumentoCustomers.ReadOnly = true;
             this.DocumentoCustomers.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DocumentoCustomers.Width = 125;
             // 
             // PhoneCustomers
             // 
@@ -363,6 +367,7 @@ namespace Supermarket.View
             this.PhoneCustomers.Name = "PhoneCustomers";
             this.PhoneCustomers.ReadOnly = true;
             this.PhoneCustomers.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.PhoneCustomers.Width = 125;
             // 
             // CumpleañosCustomers
             // 
@@ -371,6 +376,7 @@ namespace Supermarket.View
             this.CumpleañosCustomers.Name = "CumpleañosCustomers";
             this.CumpleañosCustomers.ReadOnly = true;
             this.CumpleañosCustomers.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CumpleañosCustomers.Width = 125;
             // 
             // EmailCustomers
             // 
@@ -379,6 +385,7 @@ namespace Supermarket.View
             this.EmailCustomers.Name = "EmailCustomers";
             this.EmailCustomers.ReadOnly = true;
             this.EmailCustomers.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmailCustomers.Width = 125;
             // 
             // ContraseñaCustomers
             // 
@@ -387,6 +394,7 @@ namespace Supermarket.View
             this.ContraseñaCustomers.Name = "ContraseñaCustomers";
             this.ContraseñaCustomers.ReadOnly = true;
             this.ContraseñaCustomers.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ContraseñaCustomers.Width = 125;
             // 
             // CustomersForm
             // 
