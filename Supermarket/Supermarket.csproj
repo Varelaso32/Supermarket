@@ -86,6 +86,9 @@
     <Compile Include="View\ProductsForm.Designer.cs">
       <DependentUpon>ProductsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\CategoriesForm.resx">
+      <DependentUpon>CategoriesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +127,7 @@
   <ItemGroup>
     <Content Include="Resources\buy.png" />
     <Content Include="Resources\cancel.png" />
+    <None Include="Resources\categories.png" />
     <Content Include="Resources\cerrar.png" />
     <None Include="Resources\customers.png" />
     <Content Include="Resources\delete.png" />

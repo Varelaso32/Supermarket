@@ -17,12 +17,14 @@ namespace Supermarket
         internal PayModeDAO payModeDAO;
         internal CustomerDAO customerDAO;
         internal ProductDAO productDAO;
+        internal CategoriesDAO categoriesDAO;
 
         public MainForm()
         {
             payModeDAO = new PayModeDAO();
             customerDAO = new CustomerDAO();
             productDAO = new ProductDAO();
+            categoriesDAO = new CategoriesDAO();
 
             InitializeComponent();
 
@@ -33,7 +35,10 @@ namespace Supermarket
                 (new Model.Customer(null, "Samuel", "Varela",  "12345678", "31527516", "05-09-2002", "sam.varela@mail.com", "123456OP"));
 
             productDAO.AddProduct
-                (new Model.Product(null, "Peineta", 2500, 50, 1));  
+                (new Model.Product(null, "Peineta", 2500, 50, 1));
+
+            categoriesDAO.AddCategory
+               (new Model.Category(null, "Tecnologia", "Aparatos electronicos"));
 
             //Agrego fondo para el escritorio principal en la raiz, en el bin
 
@@ -87,6 +92,13 @@ namespace Supermarket
             ProductsForm formProducts = new ProductsForm(ref productDAO);
             formProducts.MdiParent = this;
             formProducts.Show();
+        }
+
+        private void CategoriesMenuItem_Click(object sender, EventArgs e)
+        {
+            CategoriesForm formCategories = new CategoriesForm(ref categoriesDAO);
+            formCategories.MdiParent = this;
+            formCategories.Show();
         }
     }
 }

@@ -16,7 +16,8 @@ namespace Supermarket.Business //Samuel Varela Morales
         {
             ProductList = new Dictionary<int, Product>();
             productSecuencial = 0;
-        }
+
+        }//Final de clase
 
         public bool AddProduct(Product product)
         {
@@ -30,7 +31,8 @@ namespace Supermarket.Business //Samuel Varela Morales
                 return false;
             }
             return true;
-        }
+
+        }//Final de clase
 
         public bool RemoveProduct(int id)
         {
@@ -41,7 +43,8 @@ namespace Supermarket.Business //Samuel Varela Morales
                 return true;
             }
             return false;
-        }
+
+        }//Final de clase
 
         public Product GetProduct(int id)
         {
@@ -51,7 +54,8 @@ namespace Supermarket.Business //Samuel Varela Morales
                 return ProductList[id];
             }
             return null;
-        }
+
+        }//Final de clase
 
         public bool UpdateProduct(int id, Product product)
         {
@@ -69,11 +73,14 @@ namespace Supermarket.Business //Samuel Varela Morales
                 }
             }
             return false;
-        }
+
+        }//Final de clase
 
         public Dictionary<int, Product> GetProductList()
         {
             return ProductList;
-        }
-    }
+
+        }//Final de clase
+
+    }//Final de la Clase
 }
