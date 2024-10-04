@@ -134,6 +134,8 @@
     <Content Include="Resources\edit.png" />
     <None Include="Resources\icon_information.png" />
     <None Include="Resources\exit.png" />
+    <None Include="Resources\fondo2.jpg" />
+    <None Include="Resources\fondo2.png" />
     <Content Include="Resources\new.png" />
     <Content Include="Resources\products.png" />
     <Content Include="Resources\providers.png" />
