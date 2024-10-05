@@ -40,11 +40,6 @@ namespace Supermarket
             categoriesDAO.AddCategory
                (new Model.Category(null, "Tecnologia", "Aparatos electronicos"));
 
-            //Agrego fondo para el escritorio principal en la raiz, en el bin
-
-            Bitmap img = new Bitmap(Application.StartupPath + @"\img\fondo2.jpg");
-            this.BackgroundImage = img;
-            this.BackgroundImageLayout = ImageLayout.Stretch;
 
         }//Final de clase
 

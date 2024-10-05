@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Supermarket.Business;
 using Supermarket.Model;
@@ -124,6 +118,10 @@ namespace Supermarket.View //Samuel Varela Morales
             {
                 TxtFirstName.Focus();
             }
+            else if (IsNew)
+            {
+                ClearFieldsPlaceHolder();
+            }
 
         }//Final de clase
 
@@ -138,7 +136,7 @@ namespace Supermarket.View //Samuel Varela Morales
             {
                 if (IsNew)
                 {
-                    Customer customer = new Customer(null, TxtDocumento.Text, TxtFirstName.Text, TxtLastName.Text,
+                    Customer customer = new Customer(null, TxtFirstName.Text, TxtLastName.Text, TxtDocumento.Text,
                                                      TxtCelular.Text, TxtCumple.Text, TxtEmail.Text, TxtPassword.Text);
 
                     if (!customerDAO.AddCustomer(customer))
@@ -171,6 +169,7 @@ namespace Supermarket.View //Samuel Varela Morales
                             return false;
                         }
 
+                        MessageBox.Show("Producto actualizado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadCustomerList();
                         return true;
                     }
@@ -204,33 +203,16 @@ namespace Supermarket.View //Samuel Varela Morales
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            if (EditMode == true)
+            if (EditMode)
             {
                 EditMode = false;
             }
             else
             {
-                if (string.IsNullOrWhiteSpace(TxtFirstName.Text))
-                {
-                    MessageBox.Show("Seleccione un cliente de la lista", "Alerta",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                    return;
-                }
-
-                DialogResult result = MessageBox.Show("¿Está seguro que desea editar este cliente?",
-                                                      "Confirmación de Edición",
-                                                      MessageBoxButtons.YesNo,
-                                                      MessageBoxIcon.Question);
-
-                if (result == DialogResult.No)
-                {
-                    return;
-                }
-
                 EditMode = true;
                 IsNew = false;
             }
+
             ActivateControls(EditMode);
 
         }//Final de clase
@@ -254,6 +236,7 @@ namespace Supermarket.View //Samuel Varela Morales
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
                         LoadCustomerList();
+                        ClearFieldsPlaceHolder();
                     }
                     else
                     {
@@ -269,20 +252,6 @@ namespace Supermarket.View //Samuel Varela Morales
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
             }
-
-        }//Final de clase
-
-        private void ClearFields()
-        {
-            TxtId.Text = "";
-            TxtFirstName.Text = "";
-            TxtLastName.Text = "";
-            TxtDocumento.Text = "";
-            TxtCelular.Text = "";
-            TxtCumple.Text = ""; 
-            TxtEmail.Text = "";
-            TxtPassword.Text = "";
-            TxtCumple.Text = "";
 
         }//Final de clase
 
@@ -338,5 +307,31 @@ namespace Supermarket.View //Samuel Varela Morales
         {
 
         }
+        private void ClearFields()
+        {
+            TxtId.Text = "";
+            TxtFirstName.Text = "";
+            TxtLastName.Text = "";
+            TxtDocumento.Text = "";
+            TxtCelular.Text = "";
+            TxtCumple.Text = "";
+            TxtEmail.Text = "";
+            TxtPassword.Text = "";
+            TxtCumple.Text = "";
+
+        }//Final de clase
+        private void ClearFieldsPlaceHolder()
+        {
+            TxtId.Text = "";
+            TxtFirstName.Text = "Ingrese su nombre";
+            TxtLastName.Text = "Ingrese su apellido";
+            TxtDocumento.Text = "Ingrese su documento";
+            TxtCelular.Text = "Ingrese su celular";
+            TxtCumple.Text = "DD-MM-YYYY";
+            TxtEmail.Text = "Ingrese su email";
+            TxtPassword.Text = "Ingrese su direccion";
+
+        }//Final de clase
+
     }//Ultima linea
 }

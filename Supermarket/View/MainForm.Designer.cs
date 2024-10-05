@@ -67,7 +67,9 @@ namespace Supermarket
             this.ExitMenuItem});
             this.FileMenuItem.Name = "FileMenuItem";
             this.FileMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.FileMenuItem.Tag = "";
             this.FileMenuItem.Text = "File";
+            this.FileMenuItem.ToolTipText = "Archivo";
             // 
             // ExitMenuItem
             // 
@@ -75,6 +77,7 @@ namespace Supermarket
             this.ExitMenuItem.Name = "ExitMenuItem";
             this.ExitMenuItem.Size = new System.Drawing.Size(120, 26);
             this.ExitMenuItem.Text = "Exit ";
+            this.ExitMenuItem.ToolTipText = "Salir";
             this.ExitMenuItem.Click += new System.EventHandler(this.ExitMenuItem_Click);
             // 
             // MasterMenuItem
@@ -94,6 +97,7 @@ namespace Supermarket
             this.ProductsMenuItem.Name = "ProductsMenuItem";
             this.ProductsMenuItem.Size = new System.Drawing.Size(167, 26);
             this.ProductsMenuItem.Text = "Products ";
+            this.ProductsMenuItem.ToolTipText = "Ingresar a productos";
             this.ProductsMenuItem.Click += new System.EventHandler(this.ProductsMenuItem_Click);
             // 
             // ProvidersMenuItem
@@ -102,6 +106,7 @@ namespace Supermarket
             this.ProvidersMenuItem.Name = "ProvidersMenuItem";
             this.ProvidersMenuItem.Size = new System.Drawing.Size(167, 26);
             this.ProvidersMenuItem.Text = "Customers";
+            this.ProvidersMenuItem.ToolTipText = "Ingresar a clientes";
             this.ProvidersMenuItem.Click += new System.EventHandler(this.ProvidersMenuItem_Click);
             // 
             // CategoriesMenuItem
@@ -110,6 +115,7 @@ namespace Supermarket
             this.CategoriesMenuItem.Name = "CategoriesMenuItem";
             this.CategoriesMenuItem.Size = new System.Drawing.Size(167, 26);
             this.CategoriesMenuItem.Text = "Categories ";
+            this.CategoriesMenuItem.ToolTipText = "Ingresar a las categorias";
             this.CategoriesMenuItem.Click += new System.EventHandler(this.CategoriesMenuItem_Click);
             // 
             // PayModeMenuItem
@@ -118,6 +124,7 @@ namespace Supermarket
             this.PayModeMenuItem.Name = "PayModeMenuItem";
             this.PayModeMenuItem.Size = new System.Drawing.Size(167, 26);
             this.PayModeMenuItem.Text = "Pay Mode";
+            this.PayModeMenuItem.ToolTipText = "Ingresar al modo de pago";
             this.PayModeMenuItem.Click += new System.EventHandler(this.PayModeMenuItem_Click);
             // 
             // TransactionsMenuItem
@@ -155,13 +162,15 @@ namespace Supermarket
             this.AboutMenuItem.Name = "AboutMenuItem";
             this.AboutMenuItem.Size = new System.Drawing.Size(137, 26);
             this.AboutMenuItem.Text = "About ";
+            this.AboutMenuItem.ToolTipText = "Informacion";
             this.AboutMenuItem.Click += new System.EventHandler(this.AboutMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Supermarket.Properties.Resources.fondo2;
+            this.BackgroundImage = global::Supermarket.Properties.Resources.fondoGoku1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(936, 504);
             this.Controls.Add(this.MainMenu);
             this.DoubleBuffered = true;

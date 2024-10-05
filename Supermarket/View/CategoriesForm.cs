@@ -68,39 +68,24 @@ namespace Supermarket.View // Samuel Varela Morales
                 }
             }
             ActivateControls(EditMode);
-        }
+
+        } // Final de clase
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            if (EditMode == true)
+            if (EditMode)
             {
                 EditMode = false;
             }
             else
             {
-                if (string.IsNullOrWhiteSpace(TxtName.Text))
-                {
-                    MessageBox.Show("Seleccione una categoría de la lista", "Alerta",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                    return;
-                }
-
-                DialogResult result = MessageBox.Show("¿Está seguro que desea editar esta categoría?",
-                                                      "Confirmación de Edición",
-                                                      MessageBoxButtons.YesNo,
-                                                      MessageBoxIcon.Question);
-
-                if (result == DialogResult.No)
-                {
-                    return;
-                }
-
                 EditMode = true;
-                IsNew = false;
+                IsNew = false; 
             }
+
             ActivateControls(EditMode);
-        }
+
+        } // Final de clase
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -121,6 +106,7 @@ namespace Supermarket.View // Samuel Varela Morales
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
                         LoadCategoryList();
+                        ClearFieldsPlaceHolder();
                     }
                     else
                     {
@@ -136,7 +122,8 @@ namespace Supermarket.View // Samuel Varela Morales
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
             }
-        }
+
+        } // Final de clase
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -162,6 +149,10 @@ namespace Supermarket.View // Samuel Varela Morales
             if (editMode)
             {
                 TxtName.Focus();
+            }
+            else if (IsNew)
+            {
+                ClearFieldsPlaceHolder();
             }
         } // Final de clase
 
@@ -203,6 +194,7 @@ namespace Supermarket.View // Samuel Varela Morales
                             return false;
                         }
 
+                        MessageBox.Show("Categoría actualizada exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadCategoryList();
                         return true;
                     }
@@ -216,7 +208,8 @@ namespace Supermarket.View // Samuel Varela Morales
             }
 
             return true;
-        }
+
+        }//Final Clase
 
         private bool AreFieldsFilled()
         {
@@ -228,13 +221,7 @@ namespace Supermarket.View // Samuel Varela Morales
                 return false;
             }
             return true;
-        } // Final de clase
 
-        private void ClearFields()
-        {
-            TxtId.Text = "";
-            TxtName.Text = "";
-            TxtDescripcion.Text = "";
         } // Final de clase
 
         private void DgCategories_Click(object sender, EventArgs e)
@@ -248,5 +235,21 @@ namespace Supermarket.View // Samuel Varela Morales
             }
 
         }// Final de clase
+
+        private void ClearFields()
+        {
+            TxtId.Text = "";
+            TxtName.Text = "";
+            TxtDescripcion.Text = "";
+
+        } // Final de clase
+
+        private void ClearFieldsPlaceHolder()
+        {
+            TxtId.Text = "";
+            TxtName.Text = "Ingrese nombre ";
+            TxtDescripcion.Text = " Ingrese una descripcion";
+
+        }//Final de clase
     }
 }

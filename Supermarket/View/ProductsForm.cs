@@ -73,39 +73,24 @@ namespace Supermarket.View //Samuel Varela Morales
                 }
             }
             ActivateControls(EditMode);
-        }
+
+        }//Final de clase
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            if (EditMode == true)
+            if (EditMode)
             {
                 EditMode = false;
             }
             else
             {
-                if (string.IsNullOrWhiteSpace(TxtNombre.Text))
-                {
-                    MessageBox.Show("Seleccione un producto de la lista", "Alerta",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Exclamation);
-                    return;
-                }
-
-                DialogResult result = MessageBox.Show("¿Está seguro que desea editar este producto?",
-                                                      "Confirmación de Edición",
-                                                      MessageBoxButtons.YesNo,
-                                                      MessageBoxIcon.Question);
-
-                if (result == DialogResult.No)
-                {
-                    return;
-                }
-
                 EditMode = true;
                 IsNew = false;
             }
+
             ActivateControls(EditMode);
-        }
+
+        }//Final de clase
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -126,6 +111,7 @@ namespace Supermarket.View //Samuel Varela Morales
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
                         LoadProductList();
+                        ClearFieldsPlaceHolder();
                     }
                     else
                     {
@@ -141,7 +127,8 @@ namespace Supermarket.View //Samuel Varela Morales
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
             }
-        }
+
+        }//Final de clase
 
         private void BtnClose_Click(object sender, EventArgs e)
         {
@@ -183,6 +170,10 @@ namespace Supermarket.View //Samuel Varela Morales
             {
                 TxtNombre.Focus();
             }
+            else if (IsNew)
+            {
+                ClearFieldsPlaceHolder();
+            }
 
         }//Final de clase
 
@@ -198,7 +189,7 @@ namespace Supermarket.View //Samuel Varela Morales
             {
                 if (IsNew)
                 {
-                    Product product = new Product(null, TxtNombre.Text, Convert.ToInt32(TxtPrecio.Text),  // Cambiar a int
+                    Product product = new Product(null, TxtNombre.Text, Convert.ToInt32(TxtPrecio.Text),
                                                   Convert.ToInt32(TxtStock.Text), Convert.ToInt32(TxtCategoria.Text));
 
                     if (!productDAO.AddProduct(product))
@@ -228,6 +219,7 @@ namespace Supermarket.View //Samuel Varela Morales
                             return false;
                         }
 
+                        MessageBox.Show("Producto actualizado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadProductList();
                         return true;
                     }
@@ -241,8 +233,8 @@ namespace Supermarket.View //Samuel Varela Morales
             }
 
             return true;
-        }
 
+        }//Final de clase
 
         private bool AreFieldsFilled()
         {
@@ -262,9 +254,19 @@ namespace Supermarket.View //Samuel Varela Morales
         {
             TxtId.Text = "";
             TxtNombre.Text = "";
-            TxtCategoria.Text = "";
-            TxtPrecio.Text = "";
+            TxtCategoria.Text = ""; 
+            TxtPrecio.Text = ""; 
             TxtStock.Text = "";
+
+        }//Final de clase
+
+        private void ClearFieldsPlaceHolder()
+        {
+            TxtId.Text = "";
+            TxtNombre.Text = "Ingrese nombre";
+            TxtCategoria.Text = "Ingrese categoría";
+            TxtPrecio.Text = "Ingrese precio";
+            TxtStock.Text = "Ingrese stock";
 
         }//Final de clase
 

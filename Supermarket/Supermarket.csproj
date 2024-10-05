@@ -136,6 +136,7 @@
     <None Include="Resources\exit.png" />
     <None Include="Resources\fondo2.jpg" />
     <None Include="Resources\fondo2.png" />
+    <None Include="Resources\fondoGoku.jpg" />
     <Content Include="Resources\new.png" />
     <Content Include="Resources\products.png" />
     <Content Include="Resources\providers.png" />
